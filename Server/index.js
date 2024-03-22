@@ -1,6 +1,7 @@
 const express = require('express');
 const { connection } = require('./connection/db');
 const todosRouter = require('./Routes/todos.route');
+const userRouter = require('./Routes/user.route');
 require('dotenv').config()
 const cors = require('cors')
 
@@ -11,7 +12,7 @@ app.use(cors())
 
 
 app.use('/todos', todosRouter)
-
+app.use(userRouter)
 app.listen(port, async () => {
     try {
         await connection

@@ -3,7 +3,6 @@ const TodosModel = require('../models/TodosModel')
 
 
 // get all todos
-
 const getAllTodos = async (req, res) => {
     try {
         const todos = await TodosModel.find()
@@ -42,7 +41,6 @@ const createTodo = async (req, res) => {
 }
 
 // delete a todo
-
 const deleteTodo = async (req, res) => {
     try {
         const deletedTodo = await TodosModel.findByIdAndDelete(req.params.id)
@@ -59,8 +57,7 @@ const deleteTodo = async (req, res) => {
     }
 }
 
-// upadate todo
-
+// update todo
 const updateTodo = async (req, res) => {
     try {
         const updatedTodo = await TodosModel.findByIdAndUpdate(req.params.id, req.body, { new: true })
