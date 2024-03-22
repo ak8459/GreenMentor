@@ -1,5 +1,6 @@
 const express = require('express');
 const { connection } = require('./connection/db');
+const todosRouter = require('./Routes/todos.route');
 require('dotenv').config()
 const cors = require('cors')
 
@@ -9,9 +10,7 @@ app.use(express.json());
 app.use(cors())
 
 
-app.get('/', (req, res) => {
-    res.send("Server is running")
-})
+app.use('/todos', todosRouter)
 
 app.listen(port, async () => {
     try {
