@@ -9,7 +9,7 @@ const signIn = async (req, res) => {
             const token = jwt.sign({ email: user.email, userId: user._id }, 'aksdwdwed', { expiresIn: "1d" });
 
             //setting the cookie
-            res.cookie('token', token, { httpOnly: true, maxAge: 24 * 60 * 60 * 1000 })
+            res.cookie('token', token, { httpOnly: true, maxAge: 24 * 60 * 60 * 1000, sameSite: 'none', secure: true })
 
             return res.status(200).send({
                 success: true,
