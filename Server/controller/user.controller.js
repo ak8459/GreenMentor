@@ -6,11 +6,11 @@ const signIn = async (req, res) => {
     try {
         const user = await User.findOne({ email });
         if (user && await bcrypt.compare(password, user.password)) {
-            const token = jwt.sign({ email: user.email, userId: user._id }, process.env.JWT_SECRET, { expiresIn: "1d" });
+            const token = jwt.sign({ email: user.email, userId: user._id }, 'aksdwdwed', { expiresIn: "1d" });
 
             //setting the cookie
             res.cookie('token', token, { httpOnly: true, maxAge: 24 * 60 * 60 * 1000 })
-            
+
             return res.status(200).send({
                 success: true,
                 message: "User logged in successfully",
@@ -48,6 +48,7 @@ const signUp = async (req, res) => {
             return res.status(201).send({
                 success: true,
                 message: "User created successfully",
+                user: newUser
             })
         }
     } catch (error) {
