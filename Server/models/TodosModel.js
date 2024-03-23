@@ -10,7 +10,10 @@ const TodosSchema = new mongoose.Schema({
         type: String,
         required: true,
         trim: true,
+    },
+    userId: {
+        type: String,
     }
-},{versionKey: false})
+}, { versionKey: false })
 
 module.exports = mongoose.model('Todos', TodosSchema)

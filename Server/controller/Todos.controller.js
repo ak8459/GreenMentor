@@ -4,8 +4,16 @@ const TodosModel = require('../models/TodosModel')
 
 // get all todos
 const getAllTodos = async (req, res) => {
+    const { userId } = req.body
     try {
-        const todos = await TodosModel.find()
+        const todos = await TodosModel.find({ userId })
+        if (todos.length === 0) {
+            return res.status(404).send({
+                success: false,
+                message: "No todos found! Create one"
+            })
+        }
+
         res.status(200).send({
             success: true,
             message: "All todos fetched successfully",
@@ -22,6 +30,7 @@ const getAllTodos = async (req, res) => {
 
 //create a todo
 const createTodo = async (req, res) => {
+    console.log(req.body);
     try {
         const newTodo = new TodosModel(req.body)
         await newTodo.save()
@@ -74,4 +83,4 @@ const updateTodo = async (req, res) => {
     }
 }
 
-module.exports = { createTodo, getAllTodos, deleteTodo ,updateTodo}
+module.exports = { createTodo, getAllTodos, deleteTodo, updateTodo }

@@ -2,14 +2,18 @@ const express = require('express');
 const { connection } = require('./connection/db');
 const todosRouter = require('./Routes/todos.route');
 const userRouter = require('./Routes/user.route');
-require('dotenv').config()
 const cors = require('cors')
-
+const cookieParser = require('cookie-parser')
+const bodyParser = require('body-parser')
+require('dotenv').config()
+// const { authenticateUser } = require('./middleware/auth.middleware');
 let port = process.env.PORT
 const app = express();
+
 app.use(express.json());
 app.use(cors())
-
+app.use(cookieParser())
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use('/todos', todosRouter)
 app.use("/auth", userRouter)

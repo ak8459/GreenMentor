@@ -2,10 +2,15 @@ const User = require('../models/UserModel');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const signIn = async (req, res) => {
+    const { email, password } = req.body
     try {
-        const user = await User.findOne({ email: req.body.email });
-        if (user && await bcrypt.compare(req.body.password, user.password)) {
-            const token = jwt.sign({ email: user.email, id: user._id }, process.env.JWT_SECRET, { expiresIn: "1d" });
+        const user = await User.findOne({ email });
+        if (user && await bcrypt.compare(password, user.password)) {
+            const token = jwt.sign({ email: user.email, userId: user._id }, process.env.JWT_SECRET, { expiresIn: "1d" });
+
+            //setting the cookie
+            res.cookie('token', token, { httpOnly: true, maxAge: 24 * 60 * 60 * 1000 })
+            
             return res.status(200).send({
                 success: true,
                 message: "User logged in successfully",
