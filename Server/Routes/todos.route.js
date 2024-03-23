@@ -5,9 +5,11 @@ const todosRouter = require('express')();
 
 
 
-//create a todo
+// todos
 todosRouter.post('/create', createTodo)
-    .get('/get', getAllTodos).delete('/delete/:id', deleteTodo).patch('/update/:id', updateTodo)
+    .get('/get', getAllTodos)
+    .delete('/delete/:id', deleteTodo)
+    .patch('/update/:id', updateTodo)
 
 
 

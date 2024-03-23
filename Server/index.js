@@ -12,7 +12,9 @@ app.use(cors())
 
 
 app.use('/todos', todosRouter)
-app.use(userRouter)
+app.use("/auth", userRouter)
+
+
 app.listen(port, async () => {
     try {
         await connection

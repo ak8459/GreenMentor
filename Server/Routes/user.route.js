@@ -3,8 +3,8 @@ const userRouter = require('express')();
 
 
 
-userRouter.post('/signup', signUp)
-    .post('/signin', signIn)
+userRouter.post('/register', signUp)
+    .post('/login', signIn)
 
 
 module.exports = userRouter
