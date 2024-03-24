@@ -18,11 +18,12 @@ This is a todos application created using the MERN stack (MongoDB, Express.js, R
 <h4>Node.js | Express.js | MongoDB | Tailwind CSS | React.js | Redux | JWT </h4>
 
 <h3>Functionalities</h3>
-  <div>user login and signup.</div> 
- - add todo 
- - create todo
- - delete todo
- - read todo
+  <div>user login and signup</div> 
+  <div>add todo</div>
+  <div>create todo</div>
+  <div>delete todo</div>
+  <div>read todo</div>
+ 
 
 
 
