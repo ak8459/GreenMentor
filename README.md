@@ -15,10 +15,14 @@ This is a todos application created using the MERN stack (MongoDB, Express.js, R
 ![Screenshot 2024-03-24 112105](https://github.com/ak8459/GreenMentor/assets/87300147/6375216d-ff08-4621-afb6-c37dd489c4a0)
 
 <h3>Tech Stack Used</h3>
-<h4>Node.js | Express.js | MongoDB | Tailwind CSS | React.js | Redux</h4>
+<h4>Node.js | Express.js | MongoDB | Tailwind CSS | React.js | Redux | JWT </h4>
 
 <h3>Functionalities</h3>
- - sdahdlka
+ - user login and signup.
+ - add todo 
+ - create todo
+ - delete todo
+ - read todo
 
 
 
