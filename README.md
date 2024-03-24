@@ -17,6 +17,9 @@ This is a todos application created using the MERN stack (MongoDB, Express.js, R
 <h3>Tech Stack Used</h3>
 <h4>Node.js | Express.js | MongoDB | Tailwind CSS | React.js | Redux</h4>
 
+<h3>Functionalities</h3>
+ - sdahdlka
+
 
 
 
