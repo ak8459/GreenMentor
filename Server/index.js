@@ -6,17 +6,16 @@ const cors = require('cors')
 const cookieParser = require('cookie-parser')
 const bodyParser = require('body-parser')
 require('dotenv').config()
-// const { authenticateUser } = require('./middleware/auth.middleware');
+
+
 let port = process.env.PORT
 const app = express();
 
 app.use(express.json());
-app.use(cors(
-    {
-        origin: "http://localhost:3000",
-        credentials: true
-    }
-))
+app.use(cors({
+    origin: "http://localhost:3000",
+    credentials: true
+}))
 app.use(cookieParser())
 app.use(bodyParser.urlencoded({ extended: true }));
 
