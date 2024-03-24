@@ -36,6 +36,7 @@ export const deleteTodo = (id) => {
                 dispatch(getTodos())
             })
             .catch((err) => {
+                console.log(err);
                 dispatch({ type: TODO_DELETE_FAIL, payload: err });
             })
     }
@@ -56,6 +57,7 @@ export const editTodo = (id, title, description) => {
 
 
 export const addTodo = (newTodo) => {
+
     return (dispatch) => {
         axiosUtils('/todos/create', 'post', newTodo)
             .then((res) => {
