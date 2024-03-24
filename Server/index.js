@@ -20,7 +20,7 @@ app.use(cookieParser())
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use('/todos', todosRouter)
-app.use("/auth", userRouter)
+app.use("/api", userRouter)
 
 
 app.listen(port, async () => {

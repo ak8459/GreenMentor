@@ -11,7 +11,7 @@ import { axiosUtils } from "../../utils";
 export const loginUser = (data, navigate) => {
     return (dispatch) => {
         dispatch({ type: POST_LOGIN_LOADING });
-        axiosUtils('/auth/login', 'post', data)
+        axiosUtils('/api/login', 'post', data)
             .then((res) => {
                 dispatch({ type: POST_LOGIN_SUCCESS, payload: res.data.data });
                 navigate('/dashboard')
@@ -24,7 +24,7 @@ export const loginUser = (data, navigate) => {
 
 export const createUser = (data) => {
     return (dispatch) => {
-        axiosUtils('/auth/register', 'post', data)
+        axiosUtils('/api/register', 'post', data)
             .then((res) => {
                 console.log(res);
                 dispatch({ type: POST_CREATEUSER_SUCCESS, payload: res });
