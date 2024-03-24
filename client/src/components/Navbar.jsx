@@ -12,11 +12,7 @@ const Navbar = () => {
         setIsModalOpen(!isModalOpen);
     };
 
-
-
-
     const user = useSelector((state) => state.authReducer)
-    console.log(user);
     return (
         <nav className="bg-gray-800 py-4 w-full top-0">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
