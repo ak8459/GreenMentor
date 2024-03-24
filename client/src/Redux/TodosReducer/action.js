@@ -60,7 +60,7 @@ export const addTodo = (newTodo) => {
         axiosUtils('/todos/create', 'post', newTodo)
             .then((res) => {
                 dispatch({ type: TODO_ADD_SUCCESS  });
-                dispatch(getTodos())
+               
             })
             .catch((err) => {
                 dispatch({ type: TODO_ADD_FAIL, payload: err });

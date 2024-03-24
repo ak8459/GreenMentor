@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { addTodo } from '../Redux/TodosReducer/action';
+import { addTodo, getTodos } from '../Redux/TodosReducer/action';
 import { useDispatch } from 'react-redux';
 function NewTodo() {
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -19,6 +19,7 @@ function NewTodo() {
         e.preventDefault();
         const newTodo = { title, description };
         dispatch(addTodo(newTodo));
+        dispatch(getTodos());
         setTitle('');
         setDescription('');
         closeModal();

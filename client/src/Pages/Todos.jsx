@@ -8,7 +8,7 @@ const Todos = () => {
 
     const Todos = useSelector((state) => state.todosReducer)
     const { isLoading, isError, todos, Err } = Todos
-    console.log(Err);
+    // console.log(Err);
     const dispatch = useDispatch()
 
     useEffect(() => {
