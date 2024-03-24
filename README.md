@@ -1,6 +1,10 @@
 # Todo Application (MERN)
 This is a todos application created using the MERN stack (MongoDB, Express.js, React, Node.js). Users can add, delete, update, and read tasks.
 
+
+# Live Preview 
+<a>https://65ffc3147fedff963f545e44--poetic-taiyaki-c2e338.netlify.app/<a/>
+
 <h3>Sign In and Sign Up page</h3>
 
 ![Screenshot 2024-03-24 111951](https://github.com/ak8459/GreenMentor/assets/87300147/e106ba4f-f65e-45e8-b7fa-4c5d44bff1a1)
